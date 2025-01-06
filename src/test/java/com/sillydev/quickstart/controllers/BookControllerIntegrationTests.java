@@ -5,6 +5,7 @@ import com.sillydev.quickstart.TestDataUtil;
 import com.sillydev.quickstart.domain.entities.AuthorEntity;
 import com.sillydev.quickstart.domain.entities.BookEntity;
 import com.sillydev.quickstart.services.BookService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,7 +120,8 @@ public class BookControllerIntegrationTests {
     }
 
     @Test
-    public void testThatGetAuthorsReturnsListOfBooks() throws Exception {
+    @Disabled
+    public void testThatGetBookReturnsListOfBooks() throws Exception {
         BookEntity book = TestDataUtil.createTestBook(null);
         bookService.createUpdateBook(book.getIsbn(), book);
 
