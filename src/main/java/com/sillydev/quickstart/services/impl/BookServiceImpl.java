@@ -3,6 +3,8 @@ package com.sillydev.quickstart.services.impl;
 import com.sillydev.quickstart.domain.entities.BookEntity;
 import com.sillydev.quickstart.repositories.BookRepository;
 import com.sillydev.quickstart.services.BookService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,6 +34,11 @@ public class BookServiceImpl implements BookService {
                 .spliterator(),
                 false
         ).collect(Collectors.toList());
+    }
+
+    @Override
+    public Page<BookEntity> findAll(Pageable pageable) {
+        return bookRepository.findAll(pageable);
     }
 
     @Override
